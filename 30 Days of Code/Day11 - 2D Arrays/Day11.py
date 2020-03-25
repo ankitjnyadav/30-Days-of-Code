@@ -23,26 +23,30 @@ def find_hour_glass_sum(arr,row_start,colum_start):
         #print("\n")
         if x==row_start+1:
             #print(arr[x][1], end=" ")
-            sum=sum+arr[x][1]
+            #int((row_start+3)/2)
+            sum=sum+arr[x][colum_start+1]
         else:
             for y in range(colum_start,colum_start+3):
                 #print(arr[x][y],end=" ")
                 sum=sum+arr[x][y]
-    print('sum=',sum)
+    #print('sum=',sum)
     return sum
+
+def find_max_hour_glass_sum(hour_glass_sum):
+    hour_glass_sum.sort(reverse = True)
+    return hour_glass_sum[0]
+
 
 if __name__ == '__main__':
     arr = []
-
     for _ in range(6):
         arr.append(list(map(int, input().rstrip().split())))
     for x in range(len(arr)):
-        for y in range(len(arr)-3):
-            print(find_hour_glass_sum(arr,x,y))
-    # x,y,count=0
-    # while x and y < len(arr):
-    #     if count==2:
-    #         x=x+1
-    #         count=0
-    #     find_hour_glass(arr,x,y)
-    #     y=y+1
+        if x not in range(-9,10):
+            exit(0)
+    for x in range(len(arr)-2):
+        for y in range(len(arr)-2):
+            hour_glass_sum.append(find_hour_glass_sum(arr,x,y))
+    print(hour_glass_sum)
+    print(find_max_hour_glass_sum(hour_glass_sum))
+
