@@ -6,15 +6,27 @@ class Difference:
         self.__elements = a
         self.maximumDifference=0
 
-    def computeDifference(self):
+
+    # ---  First Way ---
+    def computeDifference_1(self):
         for i in range(len(a)):
             for j in range(len(a)):
                 diff= abs(a[j] - a[i])
-                print(diff)
+                #print('{}-{}={}'.format(a[j],a[i],diff))
                 if diff>self.maximumDifference:
                     self.maximumDifference= diff
 
-	# Add your code here
+    # ---  Second Way ---
+    def computeDifference_2(self):
+        x=0
+        while x<len(a)-1:
+            for y in range(len(a)):
+                diff = abs(a[x] - a[y])
+                #print('{}-{}={}'.format(a[x],a[y],diff))
+                if diff > self.maximumDifference:
+                    self.maximumDifference = diff
+            x = x + 1
+    # Add your code here
 
 # End of Difference class
 
