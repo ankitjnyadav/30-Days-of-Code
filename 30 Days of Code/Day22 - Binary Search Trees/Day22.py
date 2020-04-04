@@ -21,20 +21,6 @@ class Solution:
         return root
 
     def getHeight(self,root):
-        lcount,rcount = 0,0
-        '''        cur = root.left
-        while cur != None:
-           lcount= lcount+1
-            cur = cur.left
-        cur = root.right
-        while cur != None:
-            rcount=rcount+1
-        if lcount>rcount:
-            print(lcount)
-        else:
-            print(rcount)
-
-'''
         if root.left and root.right:
             return 1 + max(self.getHeight(root.left), self.getHeight(root.right))
         elif root.left:
