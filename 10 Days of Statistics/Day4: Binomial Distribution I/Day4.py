@@ -5,7 +5,7 @@ Problem Statement - https://www.hackerrank.com/challenges/s10-binomial-distribut
 
 from math import factorial
 
-def bionomial(x,n,p):
+def bionomial_distribution(x, n, p):
     factional_part = factorial(n)/(factorial(x)*factorial(n-x))
     result =factional_part*p**x*(1-p)**(n-x)
     return result
@@ -17,5 +17,5 @@ if __name__ == "__main__":
     n = 6
     answer = 0
     for x in range(3,7):
-        answer+= bionomial(x,n,p)
+        answer+= bionomial_distribution(x, n, p)
     print(round(answer,3))
