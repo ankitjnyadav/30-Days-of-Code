@@ -15,20 +15,16 @@ Problem Statement - https://www.hackerrank.com/challenges/s10-poisson-distributi
 
 '''
 
-from math import factorial
-from math import e
-
-
-def cal_poisson_distribution(mean,actual_no):
-    return (e**-mean)*(mean**actual_no)/factorial(actual_no)
 
 def decimal_print(value):
     formatted_float = "{:.3f}".format(value)
     print(formatted_float)
 
 if __name__ == "__main__":
-    mean = float(input())
-    actual_no = float(input())
-    decimal_print(cal_poisson_distribution(mean,actual_no))
+    a,b = map(float,(input()))
+    #a,b=0.88,1.55
+    decimal_print(160+40*(a+a**2))
+    decimal_print(128 + 40*(b + b ** 2))
+
 
 
